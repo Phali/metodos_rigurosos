@@ -170,6 +170,12 @@ class Taylor(object):
         '''
         Operacion potencia para series.
         '''
+        if isinstance(n,int):
+            result = Taylor(1)
+            for i in range(n):
+                result = result*self
+            return result
+
         return exp(log(self)*n)
     
     def sincos(self, op):
